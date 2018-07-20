@@ -64,6 +64,12 @@
 * Git flow is not compatible with SCRUM
 * Create release directly after
 * Handy tool use GitKraken
+* Use GIT Prefixes.
+  * /techdept
+  * /feature
+  * /doc
+  * /refactor
+  * /todo
 
 ### Patterns GOF patterns you must live and breath
 * Encapsulation of code
