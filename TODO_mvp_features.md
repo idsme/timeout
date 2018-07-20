@@ -1,6 +1,7 @@
 # MVP Features
 
-### Set default for All projects
+
+### Set default for All projects /feature/user
 * Environment settings
   * DONE Number of Hours a day
   * DONE Which days you work normally (Default = MA, TUE, WO, THU, Fri)
@@ -8,7 +9,7 @@
   * DONE Full Name
 
 
-### View List of Work Periods this Month
+### View List of Work Periods this Month /feature/hoursmade
 * working-period-page-layout.component.html
 * Generate a Working Month to display
   * How many days are in this month
