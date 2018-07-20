@@ -14,6 +14,10 @@
 * Change Detection Strategy
 * In our face project version, implemented user stories
 
+### Running the App locally start mocking service using JSON-Server
+* Setup json-server
+* Add concat script
+
 ### Which Tests
 * Unit tests > 85%
 * End 2 End Tests, All user scenarios
@@ -27,8 +31,10 @@
 * *themes.scss (see angular google material project)
 
 # How to Manage State and Single point of truths
-* NGRX
-* www.ultimateangular.com
+* NGRX www.ultimateangular.com
+
+# How to Retrieve Data using Observables
+* Read up on RxJs and it operators. https://www.learnrxjs.io/
 
 ### How to Log
 * Console logs stay in and should read as a story.. Don't just log variables log, class,method,action, message, variables.
@@ -92,5 +98,4 @@
 
 ### If you are not sure on the guideline.
 * Ask the lead developer after search the code.
-
 
