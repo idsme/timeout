@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  user: {
+    settings : {
+      name: 'I. Achterhof',
+      hours_per_day: 8,
+      work_days: [1, 1, 0, 1, 1, 0, 0],
+      rate_per_hour: 90
+    }
+
+  }
 };
 
 /*
