@@ -2,11 +2,11 @@
 
 ### Set default for All projects
 * Environment settings
-  * Number of Hours a day
-  * Which days you work normally (Default = MA, TUE, WO, THU, Fri)
-  * Rate per hour
-  * Add Name
-  * Add Hour
+  * DONE Number of Hours a day
+  * DONE Which days you work normally (Default = MA, TUE, WO, THU, Fri)
+  * DONE Rate per hour
+  * DONE Full Name
+
 
 ### View List of Work Periods this Month
 * working-period-page-layout.component.html
