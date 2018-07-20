@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ids';
+  title = 'Timeout the ultimate monthly hours overview app';
 }
