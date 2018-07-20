@@ -16,6 +16,10 @@
   * Add Current Date to template.
   * Add Area to add signature.
   
+### Add service to store user settings.
+* Read settings from env
+* Store user settings in Service 
+  
 ### Calculate
 * Total of hours.
 
@@ -27,7 +31,9 @@
 ### Delete working a working day.
 ### Add a working day.
 
-
+## Store Settings in DB
+* Make FireBase Account.
+* Connect FireBase to App
 
 ## Extra features Should
 
