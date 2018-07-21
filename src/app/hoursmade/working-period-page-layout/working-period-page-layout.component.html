@@ -1,3 +1,32 @@
-<p>
-  working-period-page-layout works!
-</p>
+
+<section id="section-work-period-page-layout">
+  USER_SETTINGS: {{USER_SETTINGS | json}}
+
+   CURRENTDATE: {{currentDate.format('LLLL')}}
+
+<ul>
+  <li *ngFor="let currentPeriod of periods" class="workPeriod">{{currentPeriod | json}}
+    <button *ngIf='currentPeriod.hoursWorked>0' (click)="plus(-1, currentPeriod)">-</button>
+    <button *ngIf='currentPeriod.hoursWorked>0' class="primairy-button" id="button-clear" (click)="clear(currentPeriod.dayOfTheMonth)">clear</button>
+    <button *ngIf='currentPeriod.hoursWorked===0' class="primairy-button" id="button-fil" (click)="fill(currentPeriod.dayOfTheMonth)">fill</button>
+    <button *ngIf='currentPeriod.hoursWorked>0' (click)="plus(1, currentPeriod)">+</button></li>
+</ul>
+
+<div>
+  <h2>Display Totals per client</h2>
+  <pre>Client X,
+  {{totalHours}} Hours,
+  {{earningsThisMonth}} Euros Excl, {{earningsThisMonth * 1.21}} Euros Incl.
+    for {{currentMonth}}, Current Date> {{currentDate}} >> Signature:
+  </pre>
+</div>
+
+  <button class="primairy-button" id="button-calculate" (click)="calculate()">Calculate Hours</button>
+  <span *ngIf="errorMessage" >{{errorMessage}}</span>
+</section>
+
+
+
+<!-- TODO get number of workdays from Moments.js -->
+<!-- TODO find first day of the month.
+<!-- TODO display all days of the month inside a table. -->
