@@ -1,5 +1,5 @@
 // This fill can be replaced during build by using the `fileReplacements` array.
-// `ng build ---prod` replaces `environment.ts` with `environment.prod.ts`.
+// `ng build ---prod` replaces `user.ts` with `user.prod.ts`.
 // The list of fill replacements can be found in `angular.json`.
 
 export const environment = {
@@ -7,10 +7,10 @@ export const environment = {
   user: {
     settings : {
       name: 'I. Achterhof',
-      hours_per_day: 8,
-      work_days: [1, 1, 0, 1, 1, 0, 0],
-      rate_per_hour: 90,
-      project_name_default: '999',
+      hoursWorked: 8,
+      workDays: [1, 1, 0, 1, 1, 0, 0],
+      rate: 90,
+      projectName: '999',
     },
     projects : [
       {

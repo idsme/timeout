@@ -1,9 +1,6 @@
 
 <section id="section-work-period-page-layout">
-  USER_SETTINGS: {{USER_SETTINGS | json}}
-
    CURRENTDATE: {{currentDate.format('LLLL')}}
-
 <ul>
   <li *ngFor="let currentPeriod of periods" class="workPeriod">{{currentPeriod | json}}
     <button *ngIf='currentPeriod.hoursWorked>0' (click)="plus(-1, currentPeriod)">-</button>

@@ -13,6 +13,9 @@
 * S Create page to view
 * S Save new settings to config.
   
+### Add service to store user settings.
+* Read settings from env
+* Store user settings in Service   
 
 ### View List of Work Periods this Month /feature/hoursmade
 * DONE working-period-page-layout.component.html
@@ -21,15 +24,13 @@
   * DONE The first day is. MA or THU etc print
   * DONE Add Current Date to template.
   * DONE Add Area to add signature.
-  * DONE Skip none workng days.
+  * DONE Skip none working days.
+    
   
 ### Import Export To CSV.
 * Imports and displays these lines.
 * Export to csv to save a month input.  
-  
-### Add service to store user settings.
-* Read settings from env
-* Store user settings in Service 
+
   
 ### DONE Calculate
 * DONE Total of hours.
