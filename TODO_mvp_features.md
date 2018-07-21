@@ -1,36 +1,48 @@
 # MVP Features
 
-
 ### Set default for All projects /feature/user
 * Environment settings
-  * DONE Number of Hours a day
-  * DONE Which days you work normally (Default = MA, TUE, WO, THU, Fri)
-  * DONE Rate per hour
-  * DONE Full Name
-
+  * DONE M Number of Hours a day
+  * DONE M Which days you work normally (Default = MA, TUE, WO, THU, Fri, Sat, Sun)
+  * DONE M Full Name
+  * DONE M Rate per hour
+  * E-mail addresses, self and client.
+  
+### Store Settings in Service
+* S Load settings from Env.
+* S Create page to view
+* S Save new settings to config.
+  
 
 ### View List of Work Periods this Month /feature/hoursmade
-* working-period-page-layout.component.html
-* Generate a Working Month to display
-  * How many days are in this month
-  * The first day is.
-  * Add Current Date to template.
-  * Add Area to add signature.
+* DONE working-period-page-layout.component.html
+* DONE Generate a Working Month to display
+  * DONE How many days are in this month
+  * DONE The first day is. MA or THU etc print
+  * DONE Add Current Date to template.
+  * DONE Add Area to add signature.
+  * DONE Skip none workng days.
+  
+### Import Export To CSV.
+* Imports and displays these lines.
+* Export to csv to save a month input.  
   
 ### Add service to store user settings.
 * Read settings from env
 * Store user settings in Service 
   
-### Calculate
-* Total of hours.
+### DONE Calculate
+* DONE Total of hours.
+* DONE Re-calculate
+* DONE Plus / Minus 1, Recalculate
+
 
 ### Send hours E-mail.
 * Send CSV E-mail so we can print.
 
 ## Extra features Must
 
-### Delete working a working day.
-### Add a working day.
+### DONE Clear working a working day.
 
 ## Store Settings in DB
 * Make FireBase Account.
