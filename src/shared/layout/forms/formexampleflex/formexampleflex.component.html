@@ -18,8 +18,10 @@
   <app-input controlName="geboorteMaand" placeholder="Maand" [group]="form" value="{{geboorteMaand}}"></app-input>
   <app-input controlName="geboorteJaar" placeholder="Jaar" [group]="form" value="{{geboorteJaar}}"></app-input>
   <app-input controlName="telefoonNummer" placeholder="0641396022" [group]="form" value="{{telefoonNummer}}"></app-input>
+  <app-input controlName="emailAdres" placeholder="email adres" [group]="form" value="{{emailAdres}}"></app-input>
 
 
+  <button type="submit" [disabled]="!form.valid">Submit</button>
   <cp-button (click)="submit()" buttonText="Opslaan" location="about/formflex"></cp-button>
   <cp-button buttonText="Annuleren" location=""></cp-button>
 
