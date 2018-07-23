@@ -4,6 +4,16 @@
 
 export const environment = {
   production: false,
+  version: '0.0.16',
+  appDataStore: {
+    url: 'http://localhost:3000/api',
+    baseProductsURL: '/actions/ViewAjax-Start?PageNumber=0&PageSize=100&SortingAttribute=&ViewType=&TargetPipeline=ViewStandardCatalog-ProductPaging&CategoryName=12&SearchParameter=%26%40QueryTerm%3D*%26ContextCategoryUUID%3D0s8KAQCN_2MAAAFWAOlMRzCy%26OnlineFlag%3D1&CatalogID=COOP&AjaxCall=true',
+    apiNameFeedBack: '/feedbacks',
+  },
+  masterDataStore: {
+    url: 'http://localhost:3000/assets/api',
+    apiNameMasterData: '/masterdata',
+  },
   user: {
     settings : {
       name: 'I. Achterhof',
