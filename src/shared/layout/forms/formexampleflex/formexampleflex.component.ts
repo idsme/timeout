@@ -33,17 +33,16 @@ export class FormExampleFlexComponent extends AbstractForm implements OnInit {
   ngOnInit() {
 
     // Initialized the form
-    // Initialized the form
    this.form = this.fb.group({
-      aanhef: [this.aanhef],
-      initialen: [this.initialen],
-      tussenVoegsel: [this.tussenVoegsel],
-      achterNaam: [this.achterNaam],
-      geboorteDag: [this.geboorteDag],
-      geboorteMaand: [this.geboorteMaand],
-      geboorteJaar: [this.geboorteJaar],
-      telefoonNummer: [this.telefoonNummer],
-      emailAdres: [this.emailAdres]
+      aanhef: [this.aanhef, [Validators.pattern('[a-zA-Z ]*')]],
+      initialen: [this.initialen, [Validators.pattern('[a-zA-Z ]*')]],
+      tussenVoegsel: [this.tussenVoegsel, [Validators.pattern('[a-zA-Z ]*')]],
+      achterNaam: [this.achterNaam, Validators.pattern('[a-zA-Z ]*')],
+      geboorteDag: [this.geboorteDag, [Validators.pattern('[0-9]*'), Validators.min(1), Validators.max(31)]],
+      geboorteMaand: [this.geboorteMaand, [Validators.pattern('[0-9]*'), Validators.min(1), Validators.max(12)]],
+      geboorteJaar: [this.geboorteJaar, [Validators.pattern('[0-9]*'), Validators.min(1900), Validators.max(3000)]],
+      telefoonNummer: [this.telefoonNummer, [Validators.pattern('[+]?[0-9]*'), Validators.max(12)], Validators.min(10)],
+      emailAdres: [this.emailAdres, Validators.email]
     });
 
     console.log('2.1', this.form);
