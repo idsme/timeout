@@ -1,4 +1,4 @@
-import { FormControl, FormGroup, ReactiveFormsModule, Validator, Validators } from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validator, Validators} from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import {AbstractForm} from '../abstract-forms';
 
@@ -23,41 +23,30 @@ export class FormExampleFlexComponent extends AbstractForm implements OnInit {
   geboorteMaand = '04';
   geboorteJaar = '1974';
   telefoonNummer = '0641396022';
+  emailAdres = 'idssells@gmail.com'
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
     super();
   }
 
+
   ngOnInit() {
-    this.initForm([
-        'aanhef',
-        'initialen',
-        'tussenVoegsel',
-        'achterNaam',
-        'geboorteDag',
-        'geboorteMaand',
-        'geboorteJaar',
-        'telefoonNummer',
-        'e-mailAdres'
-        ]);
 
+    // Initialized the form
+    // Initialized the form
+   this.form = this.fb.group({
+      aanhef: [this.aanhef],
+      initialen: [this.initialen],
+      tussenVoegsel: [this.tussenVoegsel],
+      achterNaam: [this.achterNaam],
+      geboorteDag: [this.geboorteDag],
+      geboorteMaand: [this.geboorteMaand],
+      geboorteJaar: [this.geboorteJaar],
+      telefoonNummer: [this.telefoonNummer],
+      emailAdres: [this.emailAdres]
+    });
 
-    const controls = {
-      'aanhef': new FormControl(),
-      'initialen': new FormControl(),
-      'tussenVoegsel': new FormControl(),
-      'achterNaam': new FormControl(),
-      'geboorteDag': new FormControl(),
-      'geboorteMaand': new FormControl(),
-      'geboorteJaar': new FormControl(),
-      'telefoonNummer': new FormControl(),
-      'e-mailAdres': new FormControl()
-    };
-
-    console.log('2.0', controls);
-    this.form = new FormGroup(controls);
-
-    console.log("2.1", this.form);
+    console.log('2.1', this.form);
 
     this.onLoading();
   }
