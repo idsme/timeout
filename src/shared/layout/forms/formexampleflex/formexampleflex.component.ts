@@ -17,7 +17,7 @@ export class FormExampleFlexComponent extends AbstractForm implements OnInit {
     { id: 'V', name: 'Mevr.'}
   ];
   tussenVoegsel = 'van';
-  initialen = 'I.';
+  initialen = 'I';
   achterNaam = 'Achterhof';
   geboorteDag = '16';
   geboorteMaand = '04';
@@ -41,7 +41,7 @@ export class FormExampleFlexComponent extends AbstractForm implements OnInit {
       geboorteDag: [this.geboorteDag, [Validators.pattern('[0-9]*'), Validators.min(1), Validators.max(31)]],
       geboorteMaand: [this.geboorteMaand, [Validators.pattern('[0-9]*'), Validators.min(1), Validators.max(12)]],
       geboorteJaar: [this.geboorteJaar, [Validators.pattern('[0-9]*'), Validators.min(1900), Validators.max(3000)]],
-      telefoonNummer: [this.telefoonNummer, [Validators.pattern('[+]?[0-9]*'), Validators.max(12)], Validators.min(10)],
+      telefoonNummer: [this.telefoonNummer, [Validators.pattern('[+]?[0-9]*'), Validators.maxLength(12), Validators.minLength(10)]],
       emailAdres: [this.emailAdres, Validators.email]
     });
 
