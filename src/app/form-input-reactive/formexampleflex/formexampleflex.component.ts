@@ -1,6 +1,6 @@
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validator, Validators} from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import {AbstractForm} from '../abstract-forms';
+import {AbstractForm} from '../../../shared/layout/forms/abstract-forms';
 
 // TODO IDSME when gettings this data via the api from a single object all the variables are not used as we can use {{(personaldata | async).achterNaam}} etc.
 @Component({

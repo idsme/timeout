@@ -10,16 +10,8 @@ import {ReleasenotesComponent} from './layout/releasenotes/releasenotes.componen
 import {StyleguideComponent} from './layout/styleguide/styleguide.component';
 import {FooterComponent} from './layout/footer.component';
 import {HeaderComponent} from './layout/header.component';
-import {InputComponent} from './layout/forms/input/input.component';
-import {AchternaamComponent} from './layout/forms/achternaam/achternaam.component';
-import {GeboortedatumComponent} from './layout/forms/geboortedatum/geboortedatum.component';
-import {TussenvoegselComponent} from './layout/forms/tussenvoegsel/tussenvoegsel.component';
-import {VoorlettersComponent} from './layout/forms/voorletters/voorletters.component';
-import {AanhefComponent} from './layout/forms/aanhef/aanhef.component';
-import {FormExampleComponent} from './layout/forms/formexample/formexample.component';
-import {FormdebugComponent} from './layout/forms/formdebug/formdebug.component';
-import {FormExampleFlexComponent} from './layout/forms/formexampleflex/formexampleflex.component';
-import {AngularFlexLayoutComponent} from './layout/forms/angularflexlayout/angularflexlayout.component';
+
+import {AngularFlexLayoutComponent} from '../app/form-input-reactive/angularflexlayout/angularflexlayout.component';
 import {FeedbackComponent} from './duplo/feedback/feedback.component';
 // Feedback component contains great example code removed angular-star-rating from the package.json import {StarRatingModule} from 'angular-star-rating';
 import {ConfigComponent} from './duplo/config/config.component';
@@ -36,7 +28,15 @@ import {KeysPipe} from './pipes/keys-pipe';
 import {ButtonComponent} from './ui/button.component';
 import {FeedBackService} from './duplo/feedback/feedback.service';
 import {HttpClientModule} from '@angular/common/http';
+import {FormInputReactiveModule} from '../app/form-input-reactive/form-input-reactive.module';
 
+/**
+ * If a component could be re-used by another web-site it goes in Shared Moduless
+ * If 3 Components are in Shared of the Same Type and you have a Fourth..
+ * Add it to Shared and Inform the Lead dev. He is responsible for the creation of new modules.
+ *
+ * @type {(HeaderComponent | HeaderImageComponent | ContentComponent | FooterComponent | ApplicationVersionComponent | RouterLinkTesterComponent | AngularFlexLayoutComponent | FeedbackComponent | ConfigComponent | ReleasenotesComponent | FileNotFoundComponent | StyleguideComponent)[]}
+ */
 
 export const COMPONENTS = [
   HeaderComponent,
@@ -45,24 +45,14 @@ export const COMPONENTS = [
   ContentComponent,
   FooterComponent,
   ApplicationVersionComponent,
-  AchternaamComponent,
-  GeboortedatumComponent,
-  TussenvoegselComponent,
-  VoorlettersComponent,
-  AanhefComponent,
-  FormExampleComponent,
-  FormExampleFlexComponent,
 
-  ButtonComponent,
   RouterLinkTesterComponent,
-  FormdebugComponent,
   AngularFlexLayoutComponent,
   FeedbackComponent,
   ConfigComponent,
   ReleasenotesComponent,
   FileNotFoundComponent,
 
-  InputComponent,
   StyleguideComponent
 ];
 
@@ -79,7 +69,7 @@ export const COMPONENT_PLUS_MODULES = [...COMPONENTS, MODULES];
 
 
 @NgModule({
-  imports: [MODULES, SharedRoutingModule
+  imports: [MODULES, SharedRoutingModule, FormInputReactiveModule
   ],
   declarations: COMPONENTS,
   providers: [ConfigService, MasterDataService, FeedBackService],

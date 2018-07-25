@@ -24,9 +24,8 @@
     <app-input controlName="emailAdres" placeholder="email adres" [group]="form" value="{{emailAdres}}"></app-input>
 
     <div>
+      <!-- TODO IDSME create button, save, cancel with an ICON befor and after it see coop project for CSS-->
       <button type="submit" [disabled]="!form.valid">Submit</button>
-      <cp-button (click)="submit()" buttonText="Opslaan" location="about/formflex"></cp-button>
-      <cp-button buttonText="Annuleren" location=""></cp-button>
     </div>
 
     <app-formdebug [group]="form"></app-formdebug>

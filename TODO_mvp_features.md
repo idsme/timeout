@@ -9,13 +9,12 @@
   * E-mail addresses, self and client.
   
 ### Store Settings in Service
-* S Load settings from Env.
-* S Create page to view
+* DONE S Load settings from Env.
+* Create Example Form Naw gegevens without Material design.
+* S Create page to view.
 * S Save new settings to config.
+* DONE Read settings from env
   
-### Add service to store user settings.
-* Read settings from env
-* Store user settings in Service   
 
 ### View List of Work Periods this Month /feature/hoursmade
 * DONE working-period-page-layout.component.html

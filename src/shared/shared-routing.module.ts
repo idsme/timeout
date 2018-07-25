@@ -5,8 +5,8 @@ import {FileNotFoundComponent} from './duplo/file-not-found/file-not-found.compo
 import {RouterLinkTesterComponent} from './duplo/router-link-tester/router-link-tester.component';
 import {ConfigComponent} from './duplo/config/config.component';
 import {FeedbackComponent} from './duplo/feedback/feedback.component';
-import {FormExampleComponent} from './layout/forms/formexample/formexample.component';
-import {FormExampleFlexComponent} from './layout/forms/formexampleflex/formexampleflex.component';
+import {FormExampleComponent} from '../app/form-input-reactive/formexample/formexample.component';
+import {FormExampleFlexComponent} from '../app/form-input-reactive/formexampleflex/formexampleflex.component';
 
 // TODO IDSME Extract Routes to Seperate file.
 // Recipe Shared Prod duplo routes
