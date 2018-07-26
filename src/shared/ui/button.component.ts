@@ -1,5 +1,9 @@
 import {Component, Input} from '@angular/core';
 
+/**
+ * Button based on link so we canperform an action action and navigate to a certain location.
+ * TODO IDSME Needs to be upgraded to using router link.
+ */
 
 @Component({
   selector: 'cp-button',
