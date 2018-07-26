@@ -15,19 +15,19 @@
 * In our face project version, implemented user stories
 
 ### Running the App locally start mocking service using JSON-Server
-* Setup json-server
-* Add concat script
+* M Setup json-server
+* M Add concat script
 
-### Which Tests
-* Unit tests > 85%
-* End 2 End Tests, All user scenarios
-* Running Test should be down with Wallaby.js
+### Which Tests (In Future)
+* M Unit tests > 85%
+* M End 2 End Tests, All user scenarios
+* M Running Test should be down with Wallaby.js
 
 ### How to Route
-* Lazy loading modules
+* DONE Lazy loading modules
 
-### How to SCSS
-* ITCSS dir structure
+### How to SCSS (In Future)
+* S ITCSS dir structure
 * *themes.scss (see angular google material project)
 
 # How to Manage State and Single point of truths
@@ -37,7 +37,8 @@
 * Read up on RxJs and it operators. https://www.learnrxjs.io/
 
 ### How to Log
-* Console logs stay in and should read as a story.. Don't just log variables log, class,method,action, message, variables.
+* Console logs stay in but should read as a story.. Don't just log variables log, class,method,action, message, variables.
+* Add Business logging for every scenario.
 * Raven Log
 
 ### TODO's stay in..
@@ -73,9 +74,12 @@
 * Use GIT Prefixes.
   * /techdept
   * /feature
-  * /doc
-  * /refactor
-  * /todo
+ Git Commit Messages
+  * TODO>
+  * JIRA-XXX>DOC>
+  * JIRA-XXX>REFACTOR>
+  * JIRA-XXX>IMP>
+  * JIRA-XXX>TESTS>
 
 ### Patterns GOF patterns you must live and breath
 * Encapsulation of code
