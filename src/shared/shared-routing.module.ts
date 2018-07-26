@@ -26,7 +26,7 @@ export const routes: Routes = [
   {path: 'fnf', component: FileNotFoundComponent}, // The direct link to see remove when going to prod.
   {path: 'router-link-tester', component: RouterLinkTesterComponent}, // Tired of testing routes that should work goto to this link and see all prod-links that should work.
   {path: 'config', component: ConfigComponent}, // Will show the config of the app.
-  {path: '**', pathMatch: 'full', redirectTo: 'about/file-not-found'}
+//  {path: '**', pathMatch: 'full', redirectTo: 'about/file-not-found'} Not working catches to much if activated
 ];
 // Explicitly not here as '' does not work in ap-routing.ts { path: '**', redirectTo: 'about/file-not-found' } // Decide if page not found we show error or go to the home or results - overview page.
 
