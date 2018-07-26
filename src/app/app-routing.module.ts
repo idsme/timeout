@@ -9,6 +9,7 @@ import {SharedRoutingModule} from '../shared/shared-routing.module';
 
 const routes: Routes = [
   {path: '', component: WorkingPeriodPageLayoutComponent},
+  {path: 'hours', component: WorkingPeriodPageLayoutComponent},
   {path: 'users', component: UsersComponent},
   {path: 'about', loadChildren: '../shared/shared.module#SharedModule'},
 ];
