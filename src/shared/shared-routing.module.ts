@@ -7,6 +7,7 @@ import {ConfigComponent} from './duplo/config/config.component';
 import {FeedbackComponent} from './duplo/feedback/feedback.component';
 import {FormExampleComponent} from '../app/form-input-reactive/formexample/formexample.component';
 import {FormExampleFlexComponent} from '../app/form-input-reactive/formexampleflex/formexampleflex.component';
+import {ApplicationVersionComponent} from './duplo/application-version/application-version.component';
 
 // TODO IDSME Extract Routes to Seperate file.
 // Recipe Shared Prod duplo routes
@@ -16,6 +17,7 @@ export const routes: Routes = [
   {path: 'about/release-notes', component: ReleasenotesComponent},
   {path: 'shared/release-notes', redirectTo: 'about/release-notes', pathMatch: 'full'},
   {path: 'about/feedback', component: FeedbackComponent},
+  {path: 'about/version', component: ApplicationVersionComponent},
   {path: 'about/formflex', component: FormExampleFlexComponent },
   {path: 'about/form', component: FormExampleComponent},
   {path: 'about/file-not-found', component: FileNotFoundComponent}, // Prod link
@@ -24,6 +26,7 @@ export const routes: Routes = [
   {path: 'fnf', component: FileNotFoundComponent}, // The direct link to see remove when going to prod.
   {path: 'router-link-tester', component: RouterLinkTesterComponent}, // Tired of testing routes that should work goto to this link and see all prod-links that should work.
   {path: 'config', component: ConfigComponent}, // Will show the config of the app.
+  {path: '**', pathMatch: 'full', redirectTo: 'about/file-not-found'}
 ];
 // Explicitly not here as '' does not work in ap-routing.ts { path: '**', redirectTo: 'about/file-not-found' } // Decide if page not found we show error or go to the home or results - overview page.
 

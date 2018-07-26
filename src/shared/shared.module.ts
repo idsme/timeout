@@ -5,7 +5,7 @@ import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {ContentComponent} from './layout/content.component';
-import {ApplicationVersionComponent} from './duplo/application-version.component';
+import {ApplicationVersionComponent} from './duplo/application-version/application-version.component';
 import {ReleasenotesComponent} from './layout/releasenotes/releasenotes.component';
 import {StyleguideComponent} from './layout/styleguide/styleguide.component';
 import {FooterComponent} from './layout/footer.component';
@@ -23,8 +23,6 @@ import {RouterLinkTesterComponent} from './duplo/router-link-tester/router-link-
 import {ConfigService} from './duplo/config/config.service';
 import {MasterDataService} from './duplo/masterdata/masterdata.service';
 
-import {EntriesPipe} from './pipes/entry-pipe';
-import {KeysPipe} from './pipes/keys-pipe';
 import {ButtonComponent} from './ui/button.component';
 import {FeedBackService} from './duplo/feedback/feedback.service';
 import {HttpClientModule} from '@angular/common/http';
