@@ -2,7 +2,8 @@
 <section id="section-work-period-page-layout">
    CURRENTDATE: {{currentDate.format('LLLL')}}
 <ul>
-  <li *ngFor="let currentPeriod of periods" class="workPeriod">{{currentPeriod | json}}
+  <li *ngFor="let currentPeriod of periods" class="workPeriod">
+    <ids-worked-period-item [workedPeriod]="currentPeriod"></ids-worked-period-item>
     <button *ngIf='currentPeriod.hoursWorked>0' (click)="plus(-1, currentPeriod)">-</button>
     <button *ngIf='currentPeriod.hoursWorked>0' class="primairy-button" id="button-clear" (click)="clear(currentPeriod.dayOfTheMonth)">clear</button>
     <button *ngIf='currentPeriod.hoursWorked===0' class="primairy-button" id="button-fil" (click)="fill(currentPeriod.dayOfTheMonth)">fill</button>
