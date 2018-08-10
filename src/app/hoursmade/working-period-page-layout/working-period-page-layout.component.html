@@ -1,30 +1,25 @@
-
+<ids-worked-period-header [consultantName]="USER_SETTINGS.settings.name" [projectName]="USER_SETTINGS.settings.projectName" [clientName]="'HENDRIKXX'" [monthName]="'JULIXXX'"> </ids-worked-period-header>
 <section id="section-work-period-page-layout">
    CURRENTDATE: {{currentDate.format('LLLL')}}
 <ul>
   <li *ngFor="let currentPeriod of periods" class="workPeriod">
     <ids-worked-period-item [workedPeriod]="currentPeriod"></ids-worked-period-item>
-    <button *ngIf='currentPeriod.hoursWorked>0' (click)="plus(-1, currentPeriod)">-</button>
-    <button *ngIf='currentPeriod.hoursWorked>0' class="primairy-button" id="button-clear" (click)="clear(currentPeriod.dayOfTheMonth)">clear</button>
-    <button *ngIf='currentPeriod.hoursWorked===0' class="primairy-button" id="button-fil" (click)="fill(currentPeriod.dayOfTheMonth)">fill</button>
-    <button *ngIf='currentPeriod.hoursWorked>0' (click)="plus(1, currentPeriod)">+</button></li>
+    <button class="button button--minus" *ngIf='currentPeriod.hoursWorked>0' (click)="plus(-1, currentPeriod)">-</button>
+    <button class="button" *ngIf='currentPeriod.hoursWorked>0' id="button-clear" (click)="clear(currentPeriod.dayOfTheMonth)">clear</button>
+    <button class="button" *ngIf='currentPeriod.hoursWorked===0' id="button-fill" (click)="fill(currentPeriod.dayOfTheMonth)">fill</button>
+    <button class="button button--plus" *ngIf='currentPeriod.hoursWorked>0' (click)="plus(1, currentPeriod)">+</button></li>
 </ul>
 
-<div>
-  <h2>Display Totals per client</h2>
-  <pre>Client X,
-  {{totalHours}} Hours,
-  {{earningsThisMonth}} Euros Excl, {{earningsThisMonth * 1.21}} Euros Incl.
-    for {{currentMonth}}, Current Date> {{currentDate}} >> Signature:
-  </pre>
-</div>
-
-  <button class="primairy-button" id="button-calculate" (click)="calculate()">Calculate Hours</button>
-  <span *ngIf="errorMessage" >{{errorMessage}}</span>
 </section>
 
+<ids-worked-period-totals totalHoursThisMonth="{{totalHours}}"
+                          totalExcludingTax="{{earningsThisMonth}}"
+                          totalIncludingTax="{{earningsThisMonth * 1.21}}" ></ids-worked-period-totals>
 
 
 <!-- TODO get number of workdays from Moments.js -->
 <!-- TODO find first day of the month.
 <!-- TODO display all days of the month inside a table. -->
+<!-- TODO fill in with real data -->
+
+<ids-worked-period-footer signCityConsultant="'Rijswijk'" signingDateConsultant="'2018-08-01'" consultantName="Ids Achterhof" signingDateManager="2019-01-01" signingManager="Pable Romerez"></ids-worked-period-footer>

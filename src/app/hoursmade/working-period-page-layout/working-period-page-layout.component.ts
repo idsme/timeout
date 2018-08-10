@@ -1,4 +1,4 @@
-import {Component, OnInit, ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as moment from 'moment';
 import 'moment/locale/nl';
 import {WorkedPeriod} from '../worked-period';
@@ -9,12 +9,11 @@ import {IUser} from '../../users/iuser';
 @Component({
   selector: 'ids-working-period-page-layout',
   templateUrl: './working-period-page-layout.component.html',
-  styleUrls: ['./working-period-page-layout.component.css']
+  styleUrls: ['./working-period-page-layout.component.scss']
 })
 
 
 export class WorkingPeriodPageLayoutComponent implements OnInit {
-
 
   USER_SETTINGS: IUser;
   errorMessage: string;
@@ -37,8 +36,10 @@ export class WorkingPeriodPageLayoutComponent implements OnInit {
     console.log(this.currentDate.format('LLLL'));
 
     console.log(`Days in Month:`, this.currentDate.daysInMonth());
-    console.log(`Days of Month:`, this.currentDate.date());
+    console.log(`Days of date:`, this.currentDate.date());
     console.log(`Days of week:`, this.currentDate.day());
+    console.log(`Month of year:`, this.currentDate.month());
+    console.log(`Year:`, this.currentDate.year());
 
 
     // Set local
@@ -89,11 +90,14 @@ export class WorkingPeriodPageLayoutComponent implements OnInit {
       if (this.USER_SETTINGS.settings.workDays[dayOfWeek]) {
 
         // TODO IDSME Add a constructor to add just two objects.
-        this.periods[n] = new WorkedPeriod(this.projectFound.name, this.projectFound.clientCode, this.projectFound.hoursWorked, this.projectFound.rate, n,
-          this.currentDate.month, this.currentDate.year);
+        console.log(`Month of year:`, this.currentDate.month());
+        console.log(`Year:`, this.currentDate.year());
+
+        this.periods[n] = new WorkedPeriod(this.projectFound.name, this.projectFound.clientCode, this.projectFound.hoursWorked, this.projectFound.rate, n + 1,
+          this.currentDate.month() + 1, this.currentDate.year());
       } else { // It is weekend on none working day.
-        this.periods[n] = new WorkedPeriod(this.projectFound.name, this.projectFound.clientCode, this.projectFound.hoursWorked, this.projectFound.rate, n,
-          this.currentDate.month, this.currentDate.year);
+        this.periods[n] = new WorkedPeriod(this.projectFound.name, this.projectFound.clientCode, this.projectFound.hoursWorked, this.projectFound.rate, n + 1,
+          this.currentDate.month() + 1, this.currentDate.year());
           HoursMadeHelper.convertDefaultFreePeriod(this.periods[n]);
       }
     }
@@ -115,7 +119,7 @@ export class WorkingPeriodPageLayoutComponent implements OnInit {
   clear(dayOfTheMonth: number) {
     console.log(`clear>DayOfTheMonth`, dayOfTheMonth);
 
-    HoursMadeHelper.convertDefaultFreePeriod(this.periods[dayOfTheMonth]);
+    HoursMadeHelper.convertDefaultFreePeriod(this.periods[dayOfTheMonth -1]);
     this.calculate();
   }
 
@@ -123,8 +127,8 @@ export class WorkingPeriodPageLayoutComponent implements OnInit {
     console.log(`reinit>DayOfTheMonth`, dayOfTheMonth);
     console.log(`Fill with>`, this.projectFound);
 
-    this.periods[dayOfTheMonth] = new WorkedPeriod(this.projectFound.name, this.projectFound.clientCode, this.projectFound.hoursWorked, this.projectFound.rateAtThatTime, dayOfTheMonth,
-      this.currentDate.month, this.currentDate.year);
+    this.periods[dayOfTheMonth - 1] = new WorkedPeriod(this.projectFound.name, this.projectFound.clientCode, this.projectFound.hoursWorked, this.projectFound.rateAtThatTime, dayOfTheMonth,
+      this.currentDate.month(), this.currentDate.year());
     this.calculate();
   }
 

@@ -1,5 +1,6 @@
-<span>
-  <span>{{workedPeriod.dayOfTheMonth}} - </span>
-  <span>{{workedPeriod.projectName}} - </span>
-  <span>{{workedPeriod.hoursWorked}}</span>
-</span>
+<div style="display:inline-block">
+  <span>{{dayOfTheWeekName}}</span>
+  <span class='number'>{{workedPeriod.dayOfTheMonth}}</span>
+  <!--<span class="project-name">{{workedPeriod.projectName}}</span>-->
+  <span class="special-number">&lt;&lt;&nbsp;{{workedPeriod.hoursWorked}}&nbsp;&gt;&gt;</span>
+</div>
