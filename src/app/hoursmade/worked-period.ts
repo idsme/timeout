@@ -15,7 +15,7 @@ export class WorkedPeriod {
     this.hoursWorked = hoursWorked;
     this.rateAtThatTime = rateAtThatTime;
     this.dayOfTheMonth = dayOfTheMonth;
-    this.monthOfTheYear = this.monthOfTheYear;
-    this.year = this.year;
+    this.monthOfTheYear = monthOfTheYear;
+    this.year = year;
   }
 }
