@@ -23,10 +23,11 @@ import {RouterLinkTesterComponent} from './duplo/router-link-tester/router-link-
 import {ConfigService} from './duplo/config/config.service';
 import {MasterDataService} from './duplo/masterdata/masterdata.service';
 
-import {ButtonComponent} from './ui/button.component';
 import {FeedBackService} from './duplo/feedback/feedback.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormInputReactiveModule} from '../app/form-input-reactive/form-input-reactive.module';
+import {ButtonPrimairyComponent} from './ui/button-primairy/button-primairy.component';
+import {ExampleButtonsComponent} from './ui/example-buttons/example-buttons.component';
 
 /**
  * If a component could be re-used by another web-site it goes in Shared Moduless
@@ -51,7 +52,9 @@ export const COMPONENTS = [
   ReleasenotesComponent,
   FileNotFoundComponent,
 
-  StyleguideComponent
+  StyleguideComponent,
+  ButtonPrimairyComponent,
+  ExampleButtonsComponent
 ];
 
 export const MODULES = [

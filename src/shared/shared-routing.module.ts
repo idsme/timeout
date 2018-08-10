@@ -8,6 +8,7 @@ import {FeedbackComponent} from './duplo/feedback/feedback.component';
 import {FormExampleComponent} from '../app/form-input-reactive/formexample/formexample.component';
 import {FormExampleFlexComponent} from '../app/form-input-reactive/formexampleflex/formexampleflex.component';
 import {ApplicationVersionComponent} from './duplo/application-version/application-version.component';
+import {ExampleButtonsComponent} from './ui/example-buttons/example-buttons.component';
 
 // TODO IDSME Extract Routes to Seperate file.
 // Recipe Shared Prod duplo routes
@@ -26,6 +27,7 @@ export const routes: Routes = [
   {path: 'fnf', component: FileNotFoundComponent}, // The direct link to see remove when going to prod.
   {path: 'router-link-tester', component: RouterLinkTesterComponent}, // Tired of testing routes that should work goto to this link and see all prod-links that should work.
   {path: 'config', component: ConfigComponent}, // Will show the config of the app.
+  {path: 'about/buttons', component: ExampleButtonsComponent},
 //  {path: '**', pathMatch: 'full', redirectTo: 'about/file-not-found'} Not working catches to much if activated
 ];
 // Explicitly not here as '' does not work in ap-routing.ts { path: '**', redirectTo: 'about/file-not-found' } // Decide if page not found we show error or go to the home or results - overview page.
