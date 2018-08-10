@@ -24,7 +24,18 @@
   * DONE Add Current Date to template.
   * DONE Add Area to add signature.
   * DONE Skip none working days.
-    
+* DONE Visually Pimp month list section Version 1
+  * Version 2
+  * Version 3
+* Visually Pimp Heading Section Version 1
+  * Version 2
+  * Version 3
+* Visually Pimp Totals Section Version 1
+  * Version 2
+  * Version 3
+* Visually Pimp Config Section Version 1
+  * Version 2
+  * Version 3  
   
 ### Import Export To CSV.
 * Imports and displays these lines.
@@ -52,3 +63,7 @@
 
 ### Re-Generate a Working Month
 * Add a working day (Day of Month, Hours worked for Client X)
+
+
+#Add icon's to website
+* fontawesome
