@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import * as moment from 'moment';
 
 @Component({
   selector: 'ids-worked-period-footer',
@@ -8,17 +9,15 @@ import {Component, Input, OnInit} from '@angular/core';
 export class WorkedPeriodFooterComponent implements OnInit {
 
   @Input()
-  signCityConsultant: string;
+  signCityConsultant = "Rotterdam";
   @Input()
-  signingDateConsultant: string;
+  signingDateConsultant = moment().format('ddd DD/MM/YYYY');
   @Input()
-  consultantName: string;
+  consultantName = "Ids Achterhof";
   @Input()
-  signCityManager: string;
+  signCityManager = this.signCityConsultant
   @Input()
-  signingDateManager: string;
-  @Input()
-  signingManager: string;
+  signingDateManager = this.signingDateConsultant;
 
 
   constructor() { }
