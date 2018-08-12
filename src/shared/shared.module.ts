@@ -28,6 +28,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormInputReactiveModule} from '../app/form-input-reactive/form-input-reactive.module';
 import {ButtonPrimairyComponent} from './ui/button-primairy/button-primairy.component';
 import {ExampleButtonsComponent} from './ui/example-buttons/example-buttons.component';
+import {IconButtonComponent} from './ui/icon-button/icon-button.component';
+import {IconButtonAlternativeComponent} from './ui/icon-button-alternative/icon-button-alternative.component';
 
 /**
  * If a component could be re-used by another web-site it goes in Shared Moduless
@@ -54,7 +56,10 @@ export const COMPONENTS = [
 
   StyleguideComponent,
   ButtonPrimairyComponent,
-  ExampleButtonsComponent
+  ExampleButtonsComponent,
+
+  IconButtonComponent,
+  IconButtonAlternativeComponent
 ];
 
 export const MODULES = [
