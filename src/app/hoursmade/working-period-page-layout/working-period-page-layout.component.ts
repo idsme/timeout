@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import * as moment from 'moment';
 import 'moment/locale/nl';
 import {WorkedPeriod} from '../worked-period';
@@ -15,6 +15,7 @@ import {IUser} from '../../users/iuser';
 
 export class WorkingPeriodPageLayoutComponent implements OnInit {
 
+  @Input() _viewMode: 'EDIT' | 'PRINT';
   USER_SETTINGS: IUser;
   errorMessage: string;
   currentDate;
@@ -29,6 +30,7 @@ export class WorkingPeriodPageLayoutComponent implements OnInit {
 
   ngOnInit() {
 
+    this._viewMode = 'EDIT';
     this.USER_SETTINGS = this.userService.user;
 
     // Get current Time.
@@ -136,6 +138,22 @@ export class WorkingPeriodPageLayoutComponent implements OnInit {
     console.log(`plus>${plus}>`, currentPeriod);
     currentPeriod.hoursWorked += plus;
     this.calculate();
+  }
+
+  set viewMode(mode: 'EDIT' | 'PRINT'  ) {
+    this._viewMode = mode;
+  }
+
+  get viewMode(): 'EDIT' | 'PRINT' {
+    return this._viewMode;
+  }
+
+  togglePrint(): void {
+    if(this.viewMode === 'PRINT') {
+      this.viewMode = 'EDIT';
+    } else {
+      this.viewMode = 'PRINT'
+    }
   }
 
 }

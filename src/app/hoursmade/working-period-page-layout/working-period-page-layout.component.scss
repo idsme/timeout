@@ -1,6 +1,6 @@
 $radius : 5px;
-$color-brand-green-dark: limegreen;
-$color-brand-red-dark: lightcoral;
+$color-brand-green-dark: limegreen !default;
+$color-brand-red-dark: lightcoral !default;
 
 // text-overflow: ellipsis
 @mixin ellipsis(){
