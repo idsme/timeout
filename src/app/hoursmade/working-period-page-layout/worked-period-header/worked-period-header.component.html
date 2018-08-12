@@ -1,8 +1,16 @@
 <section id="section-worked-period-header">
   <div>
-    <div style="background-color:lightskyblue">{{monthName}}</div>
-    <div style="background-color:lightgray">{{consultantName}}</div>
-    <div style="background-color:lightblue">{{clientName}}</div>
-    <div style="background-color:lightcyan">{{projectName}}</div>
+    <div class="regularVerticalPadding" style="background-color:green; width:100%">
+      <div class="textWhite regularHorizontalPadding" style="width:50%; float:left; height:30px">Urenstaat</div>
+      <div class="textWhite regularHorizontalPadding" style="width:50%; float:left; text-align: right; height:30px">Think Systems</div>
+      <div style="clear:both;"></div>
+    </div>
+    <div class="regularVerticalPadding regularDashedBottomBorder" style="width: 100%">
+      <span> {{consultantName}}</span>&nbsp;-&nbsp;
+      <span>{{monthName}}</span>
+   </div>
+  </div>
+  <div>
+    <span class="regularVerticalPadding">Project : {{projectName}}</span>
   </div>
 </section>
