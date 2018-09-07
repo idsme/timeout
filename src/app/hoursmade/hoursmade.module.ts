@@ -7,12 +7,13 @@ import { WorkedPeriodFooterComponent } from './working-period-page-layout/worked
 import { WorkedPeriodTotalsComponent } from './working-period-page-layout/worked-period-totals/worked-period-totals.component';
 import { ActionMenuComponent } from './working-period-page-layout/action-menu/action-menu.component';
 import {SharedModule} from '../../shared/shared.module';
+import { WorkPeriodHoursTotalComponent } from './working-period-page-layout/work-period-hours-total/work-period-hours-total.component';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule
   ],
-  declarations: [WorkingPeriodPageLayoutComponent, WorkedPeriodItemComponent, WorkedPeriodHeaderComponent, WorkedPeriodFooterComponent, WorkedPeriodTotalsComponent, ActionMenuComponent]
+  declarations: [WorkingPeriodPageLayoutComponent, WorkedPeriodItemComponent, WorkedPeriodHeaderComponent, WorkedPeriodFooterComponent, WorkedPeriodTotalsComponent, ActionMenuComponent, WorkPeriodHoursTotalComponent, WorkPeriodHoursTotalComponent]
 })
 export class HoursmadeModule { }
