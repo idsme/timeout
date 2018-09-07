@@ -1,16 +1,30 @@
 <section id="section-worked-period-header">
-  <div>
-    <div class="regularVerticalPadding" style="background-color:green; width:100%">
-      <div class="textWhite regularHorizontalPadding" style="width:50%; float:left; height:30px">Urenstaat</div>
-      <div class="textWhite regularHorizontalPadding" style="width:50%; float:left; text-align: right; height:30px">Think Systems</div>
-      <div style="clear:both;"></div>
-    </div>
-    <div class="regularVerticalPadding regularDashedBottomBorder" style="width: 100%">
+  <div id="header-top" class="regularVerticalPadding" style="width:100%">
+    <div class="textWhite regularHorizontalPadding" style="width:50%; float:left; height:20px">Urenstaat</div>
+    <div class="textWhite regularHorizontalPadding" style="width:50%; float:left; text-align: right; height:20px">Think Systems</div>
+    <div style="clear:both;"></div>
+  </div>
+
+  <div id="header-bottom" class="regularVerticalPadding" style="width:100%">
+    <div class="regularHorizontalPadding" style="width:50%; float:left; height:20px">
       <span> {{consultantName}}</span>&nbsp;-&nbsp;
       <span>{{monthName}}</span>
-   </div>
+    </div>
+    <div class="regularHorizontalPadding" style="width:50%; float:left; text-align: right; height:20px">Project : {{projectName}}</div>
+    <div style="clear:both;"></div>
   </div>
+
+
+
+<!--
+  <div class="regularVerticalPadding regularDashedBottomBorder" style="width: 100%">
+    <span class="regularHorizontalPadding"> {{consultantName}}</span>&nbsp;-&nbsp;
+    <span class="regularHorizontalPadding">{{monthName}}</span>
+ </div>
+
   <div>
-    <span class="regularVerticalPadding">Project : {{projectName}}</span>
+    <span class="regularVerticalPadding regularHorizontalPadding">Project : {{projectName}}</span>
   </div>
+-->
+
 </section>
