@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'ids-action-menu',
@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActionMenuComponent implements OnInit {
 
+
+  @Output()
+  public nextMonth = new EventEmitter<any>();
+  @Output()
+  public prevMonth = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public gotoNextMonth() {
+    console.log('goto Next Month');
+    this.nextMonth.emit();
+  }
+
+  public gotoPrevMonth() {
+    console.log('goto Prev Month');
+    this.prevMonth.emit();
   }
 
 }

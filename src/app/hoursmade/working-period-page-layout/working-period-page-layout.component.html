@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div *ngIf="viewMode === 'EDIT'" style="text-align:center">
   <h2>
-    Tijd om je uren in te vullen ...
+    No time for filling in time sheets. Try this one.
   </h2>
   <a [routerLink]="['/users']" [queryParams]="{debug: true}">
     user-profile settings
@@ -11,7 +11,8 @@
   </a>
 </div>
 
-<ids-action-menu *ngIf="viewMode === 'EDIT'"> </ids-action-menu><ids-icon-button (click)="togglePrint()">Print</ids-icon-button>
+<ids-action-menu (prevMonth)="gotoPrevMonth1()" (nextMonth)="gotoNextMonth1()" *ngIf="viewMode === 'EDIT'"> </ids-action-menu>
+<ids-icon-button (click)="togglePrint()">Print</ids-icon-button>
 
 
 <ids-worked-period-header [consultantName]="USER_SETTINGS.settings.name" [projectName]="USER_SETTINGS.settings.projectName" [clientName]="'EPO'" monthName="{{currentDate.format('MMMM')}}"> </ids-worked-period-header>
@@ -33,6 +34,8 @@
 </ul>
 
 </section>
+
+<ids-work-period-hours-total totalHoursThisMonth="{{totalHours}}"></ids-work-period-hours-total>
 
 <!-- TODO get number of workdays from Moments.js -->
 <!-- TODO find first day of the month.
