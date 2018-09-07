@@ -11,13 +11,13 @@ export class UsersService {
       settings : {
         name: 'I. Achterhof',
         hoursWorked: 8,
-        workDays: [1, 1, 0, 1, 1, 0, 0],
+        workDays: [1, 1, 1, 1, 1, 0, 0],
         rate: 90,
         projectName: '999',
       },
       projects : [
         {
-          name: 'project xx',
+          name: 'EPO',
           clientCode: '998',
           rate: 90,
         },
