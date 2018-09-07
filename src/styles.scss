@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+@page { size: auto;  margin: 0.5cm; }
+
 * {
   box-sizing: border-box;
 }
@@ -9,24 +11,23 @@ $regularPadding:10px;
 .regularHorizontalPadding {
   padding-left: $regularPadding;
   padding-right: $regularPadding;
-  display:inline-block;
+//  display:inline-block;
 }
 
 .regularVerticalPadding {
   padding-top: $regularPadding;
   padding-bottom: $regularPadding;
-  display:inline-block;
+//  display:inline-block;
 }
 
 .regularVerticalMargin {
   margin-top: $regularPadding;
-  display:inline-block;
+//  display:inline-block;
 }
 
 
-
 $color-brand-green-primairy: limegreen !default;
-$color-brand-green-secondary: lightgreen !default;
+$color-brand-green-secondary: green !default;
 $color-brand-green-accent: lightgreen !default;
 $color-brand-white: white !default;
 $color-brand-black: black !default;
@@ -41,4 +42,8 @@ $color-brand-gray: lightslategray !default;
 
 .regularDashedBottomBorder {
   border-bottom: 1px dashed $color-brand-green-primairy;
+}
+
+html, body {
+  font-size: 11px;
 }
