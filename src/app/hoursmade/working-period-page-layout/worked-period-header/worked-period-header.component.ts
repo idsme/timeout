@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'ids-worked-period-header',
@@ -6,6 +6,9 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./worked-period-header.component.scss']
 })
 export class WorkedPeriodHeaderComponent implements OnInit {
+
+  @Output()
+  print = new EventEmitter<any>();
 
   @Input()
   monthName;
@@ -22,6 +25,10 @@ export class WorkedPeriodHeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  clickedPrint() {
+    this.print.emit();
   }
 
 }
