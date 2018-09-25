@@ -66,7 +66,7 @@ export class WorkingPeriodPageLayoutComponent implements OnInit {
   clear(dayOfTheMonth: number) {
     console.log(`clear>DayOfTheMonth`, dayOfTheMonth);
 
-    HoursMadeHelper.convertDefaultFreePeriod(this.periods[dayOfTheMonth -1]);
+    HoursMadeHelper.convertDefaultFreePeriod(this.periods[dayOfTheMonth - 1]);
     this.calculate();
   }
 
@@ -94,7 +94,7 @@ export class WorkingPeriodPageLayoutComponent implements OnInit {
   }
 
   togglePrint(): void {
-    if(this.viewMode === 'PRINT') {
+    if (this.viewMode === 'PRINT') {
       this.viewMode = 'EDIT';
     } else {
       this.viewMode = 'PRINT';
