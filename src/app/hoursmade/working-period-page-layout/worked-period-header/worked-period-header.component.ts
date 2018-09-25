@@ -7,6 +7,9 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class WorkedPeriodHeaderComponent implements OnInit {
 
+  printButtonText = '=> Print - View';
+  printButtonActive = false;
+
   @Output()
   print = new EventEmitter<any>();
 
@@ -29,6 +32,9 @@ export class WorkedPeriodHeaderComponent implements OnInit {
 
   clickedPrint() {
     this.print.emit();
+    this.printButtonText = (this.printButtonText !== '=> Print - View') ? '=> Print - View' : '=> Web - View';
+    this.printButtonActive = !this.printButtonActive;
+//    window.print();
   }
 
 }
