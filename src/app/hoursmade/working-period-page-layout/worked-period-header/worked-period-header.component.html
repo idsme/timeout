@@ -2,22 +2,22 @@
 
   <div id="header-top" class="regularVerticalPadding" style="width:100%">
     <div style="float:left;">
-      <div class="regularHorizontalPadding" style=" display:inline-block; height:20px">
-        <ids-icon-button (click)="clickedPrint()" label="P"></ids-icon-button>
+      <div class="textWhite regularHorizontalPadding" style="display:inline-block; text-align: right">Think Systems</div>
+      <div class="regularHorizontalPadding" style=" display:inline-block">
+        <ids-icon-button (click)="clickedPrint();" label="{{printButtonText}}" [active]="printButtonActive"></ids-icon-button>
       </div>
-      <div class="textWhite regularHorizontalPadding" style="display:inline-block; text-align: right; height:20px">Think Systems</div>
       <div style="clear:both;"></div>
     </div>
-    <div class="textWhite regularHorizontalPadding" style="width:200px; float:right; text-align:right; height:20px; display:inline-block">Urenstaat</div>
+    <div class="textWhite regularHorizontalPadding" style="width:200px; float:right; text-align:right; display:inline-block">Urenstaat</div>
     <div style="clear:both;"></div>
   </div>
 
   <div id="header-bottom" class="regularVerticalPadding" style="width:100%">
-    <div class="regularHorizontalPadding" style="width:50%; float:left; height:20px">
+    <div class="regularHorizontalPadding" style="width:50%; float:left">
       <span> {{consultantName}}</span>&nbsp;-&nbsp;
       <span>{{monthName}}</span>
     </div>
-    <div class="regularHorizontalPadding" style="width:50%; float:left; text-align: right; height:20px">Project : {{projectName}}</div>
+    <div class="regularHorizontalPadding" style="width:50%; float:left; text-align: right">Project : {{projectName}}</div>
     <div style="clear:both;"></div>
   </div>
 
