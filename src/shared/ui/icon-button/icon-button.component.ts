@@ -7,7 +7,9 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class IconButtonComponent implements OnInit {
 
-  @Input() label = "";
+  @Input() label = 'No Label Set';
+  @Input() active = false;
+
 
   constructor() { }
 
