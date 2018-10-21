@@ -1,10 +1,23 @@
 <h2>Config Component!</h2>
 
-<h3>COUNTRIES>></h3>{{this.countries | json}}
+<h3>CONFIG</h3>
 
 
-<h3>CONFIG>></h3>{{  (this.config ) | json}}
+    <section id="section-config">
+      <!-- todo add input form here -->
+      <form [formGroup]="userConfigForm" (ngSubmit)="this.submit()">
+        <div>
+          <label>user name:></label>
+          <input formControlName="username">
+        </div>
+        <button type="submit" (click)="this.submit()">submit</button>
+      </form>
+    </section>
 
-  <!--masterdata works!-->
-  <!--{{this.countries | json}}-->
-  <h3>COUNTRIES:><h3>{{this.masterDataCountries | json}}
+
+<div>
+  <div>Observable.IConfig:>{{ (this.userAppConfig$ | async) | json}}</div>
+  <div>Config:>{{ (this.userAppConfig ) | json}}</div>
+  <div>form content:>{{this.userConfigForm.value  | json}}</div>
+  <div>form validity:>{{this.userConfigForm.valid}}}</div>
+</div>

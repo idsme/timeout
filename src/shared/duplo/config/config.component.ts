@@ -1,16 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ConfigService} from './config.service';
 import {MasterDataService} from '../masterdata/masterdata.service';
+import {FormBuilder, Validators} from '@angular/forms';
+import {Observable} from 'rxjs';
 
-export interface IConfig {
-  someConfigItem1: string;
-  someConfigItem2: string;
-}
-
-export interface ICountry {
-  code: string;
-  description: string;
-}
 
 @Component({
   selector: 'app-config',
@@ -18,46 +11,31 @@ export interface ICountry {
   styleUrls: ['./config.component.scss']
 })
 export class ConfigComponent implements OnInit {
-  public config: IConfig;
-  public countries: ICountry[];
-  public masterDataCountries: ICountry[];
 
-  constructor(public configService: ConfigService, public masterDataService: MasterDataService) {
+  public userAppConfig$: Observable<IConfig>;
+  public userAppConfig: IConfig;
+
+  public userConfigForm = null;
+
+  constructor(public configService: ConfigService, public masterDataService: MasterDataService, public fb: FormBuilder) {
   }
 
   ngOnInit() {
-    this.showConfig();
-    this.showConfigCountry();
-    this.showMasterDataCountries();
+    this.userAppConfig$ = this.masterDataService.getConfig();
+    this.masterDataService.getConfig().subscribe((data: IConfig) => this.userAppConfig = data);
+
+.
+    // Setup form configuration
+    this.userConfigForm = this.fb.group({username: ['Ids', Validators.required]});
   }
 
-  showConfig() {
-    this.configService.getConfig().subscribe((data: IConfig) => {
-      this.config = data;
-      console.log('Config Found contents:>', this.config);
-    });
-  }
+  public submit(): void {
+    // Update the userAppConfig
+    this.userAppConfig.user.settings.name = this.userConfigForm.value.username;
+    // TODO IDSME store submitted settings in Config
 
-  showConfigCountry() {
-    this.configService.getConfigCountry().subscribe((country: ICountry[]) => {
-      // Currently only one country is returned
-      this.countries = country;
-    });
-  }
 
-  // TODO IDSME substitute code above with this.
-  public mapConfigData(data) {
-    console.log('Mapping, Incomping Config Data:>', data);
-    this.config = data;
-    console.log('Result of mapping this.config:>', this.config);
-  }
-
-  private showMasterDataCountries() {
-    this.masterDataService.get<ICountry[]>('countries.json').subscribe((data: ICountry[]) => {
-      this.masterDataCountries = data;
-      console.log(`Just read in the masterDataCountries:>${this.masterDataCountries}`);
-      console.log(`Number of countries read in:>${this.masterDataCountries.length}`);
-    });
+    console.log('Submmitted:>', this.userConfigForm.value);
   }
 }
 
@@ -81,3 +59,31 @@ export class ConfigComponent implements OnInit {
 // onUnmount() {
 //   this.subscription.unsubscribe();
 // }
+
+
+  export interface Settings {
+    name: string;
+    hoursWorked: number;
+    workDays: number[];
+    rate: number;
+    projectName: string;
+  }
+
+  export interface Project {
+    name: string;
+    clientCode: string;
+    rate: number;
+  }
+
+  export interface User {
+    settings: Settings;
+    projects: Project[];
+  }
+
+  export interface IConfig {
+    user: User;
+  }
+
+
+
+
