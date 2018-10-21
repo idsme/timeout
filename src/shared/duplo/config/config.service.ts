@@ -12,11 +12,7 @@ export class ConfigService {
     return this.http.get(this.configUrl);
   }
 
-  getConfigCountry() {
-    return this.http.get('assets/api/countries.json');
-  }
-
-  // TODO  this method above... or use the master data service classe.
+  // TODO  this method above... or use the master data service class.
   getMasterData(masterDataFileNames?: string[]) {
 
     if (masterDataFileNames) {
