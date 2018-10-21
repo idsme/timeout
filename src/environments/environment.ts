@@ -11,7 +11,7 @@ export const environment = {
     apiNameFeedBack: '/feedbacks',
   },
   masterDataStore: {
-    url: 'http://localhost:3000/assets/api',
+    url: 'http://localhost:4200/assets/api',
     apiNameMasterData: '/masterdata',
   },
   user: {
@@ -34,7 +34,6 @@ export const environment = {
         rate: 85,
       }
     ]
-
   }
 };
 
