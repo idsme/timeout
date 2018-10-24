@@ -9,11 +9,11 @@
   * E-mail addresses, self and client.
   
 ### Store Settings in Service
-* DONE S Load settings from Env.
-* Create Example Form Naw gegevens without Material design.
-* S Create page to view.
-* S Save new settings to config.
-* DONE Read settings from env
+* DONE S get settings from config.json
+* DONE Create Example Form Naw gegevens without Material design.
+* DONE S Save new settings to config.
+* Remove user settings from environment, 
+* Move settings collection from ConfigService to UserService as it is about user data.
   
 
 ### View List of Work Periods this Month /feature/hoursmade
