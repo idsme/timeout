@@ -2,8 +2,11 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AbstractRestImplService} from '../../abstract-rest.service';
 import {environment} from '../../../environments/environment';
-import {IConfig} from '../config/config.component';
 import {Observable} from 'rxjs';
+import {IUser} from '../../../app/users/iuser';
+
+class IConfig {
+}
 
 @Injectable()
 export class MasterDataService extends AbstractRestImplService {
@@ -24,5 +27,7 @@ export class MasterDataService extends AbstractRestImplService {
     return this.get<IConfig>('config.json');
   }
 
-  // Add extra master Details config methods here.
+  getUser(): Observable<IUser> {
+    return this.get<IUser>('user.json');
+  }
 }
