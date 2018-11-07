@@ -2,6 +2,11 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AbstractRestImplService} from '../../abstract-rest.service';
 import {environment} from '../../../environments/environment';
+import {Observable} from 'rxjs';
+import {IUser} from '../../../app/users/iuser';
+
+class IConfig {
+}
 
 @Injectable()
 export class MasterDataService extends AbstractRestImplService {
@@ -18,5 +23,11 @@ export class MasterDataService extends AbstractRestImplService {
     console.info('MasterDataService:>>Initialized:url:>' + this.url + '/' + this.apiName);
   }
 
-  // TODO IDSME get the JSON key value masterdetail data from the server.
+  getConfig(): Observable<IConfig> {
+    return this.get<IConfig>('config.json');
+  }
+
+  getUser(): Observable<IUser> {
+    return this.get<IUser>('user.json');
+  }
 }

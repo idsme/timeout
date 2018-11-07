@@ -11,30 +11,8 @@ export const environment = {
     apiNameFeedBack: '/feedbacks',
   },
   masterDataStore: {
-    url: 'http://localhost:3000/assets/api',
+    url: 'http://localhost:4200/assets/api',
     apiNameMasterData: '/masterdata',
-  },
-  user: {
-    settings : {
-      name: 'I. Achterhof',
-      hoursWorked: 8,
-      workDays: [1, 1, 0, 1, 1, 0, 0],
-      rate: 90,
-      projectName: '999',
-    },
-    projects : [
-      {
-        name: 'project x',
-        clientCode: '999',
-        rate: 90,
-      },
-      {
-        name: 'project b',
-        clientCode: '667',
-        rate: 85,
-      }
-    ]
-
   }
 };
 
