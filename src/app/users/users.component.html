@@ -3,11 +3,11 @@
 <section id="section-user-config">
   <form [formGroup]="userConfigForm" (ngSubmit)="this.submit()">
     <div>
-      <label>username:></label>
+      <label>Name of User:></label>
       <input formControlName="userName">
     </div>
     <div>
-      <label>default hours per day:></label>
+      <label>default hours per day1:></label>
       <input formControlName="hoursWorked">
     </div>
     <div>
@@ -18,6 +18,13 @@
       <label>Name of Project:></label>
       <input formControlName="projectName">
     </div>
+    <div>
+      <label>Name of Client:></label>
+      <input formControlName="clientName">
+    </div>
+
+
+
 
 
     <div formGroupName="workDays">
@@ -36,7 +43,7 @@
       <div>zo</div>
       <input formControlName="zo" placeholder="WorkDay">
 
-      Chosen name: {{ userConfigForm.controls.workDays.controls.ma.value }}
+      Choosen name: {{ userConfigForm.controls.workDays.controls.ma.value }}
     </div>
 
     <!-- todo add selection of project to config page store using select box -->
