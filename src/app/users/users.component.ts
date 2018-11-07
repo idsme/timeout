@@ -53,10 +53,13 @@ export class UsersComponent implements OnInit {
       userName: new FormControl('D. Achterhof'),
       clientName: new FormControl('EPO'),
       workDays: new FormGroup({
-        ma: 9,
-        di: 9,
-        wo: 8,
-        do: 9
+        ma: new FormControl(9),
+        di: new FormControl(9),
+        wo: new FormControl(13),
+        do: new FormControl(9),
+        vr: new FormControl(14),
+        za: new FormControl(9),
+        zo: new FormControl(9)
       })
     });
     return result;
@@ -64,13 +67,13 @@ export class UsersComponent implements OnInit {
 
   createWeekDays(): FormGroup {
     return this.fb.group({
-      ma: 1,
-      di: 1,
-      wo: 1,
-      do: 1,
-      vr: 0,
-      za: 0,
-      zo: 0
+      ma: new FormControl(1),
+      di: new FormControl(1),
+      wo: new FormControl(1),
+      do: new FormControl(1),
+      vr: new FormControl(0),
+      za: new FormControl(0),
+      zo: new FormControl(0)
     });
   }
 
@@ -82,6 +85,7 @@ export class UsersComponent implements OnInit {
     this.userAppConfig.settings.rate = this.userConfigForm.value.rate;
     this.userAppConfig.settings.projectName = this.userConfigForm.value.projectName;
 
+    console.log("workDays", this.userConfigForm.controls.workDays);
 
     this.userAppConfig.settings.workDays[0] = this.userConfigForm.controls.workDays.controls.ma.value;
     this.userAppConfig.settings.workDays[1] = this.userConfigForm.controls.workDays.controls.di.value;
