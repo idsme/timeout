@@ -2,17 +2,18 @@
 
 
   #section-worked-period-header {
-    -webkit-print-color-adjust: exact;
+    //-webkit-print-color-adjust: exact;
   }
 
   #header-top {
-    background-color: $color-brand-green-secondary !important;
-    -webkit-print-color-adjust: exact;
+    //background-color: $color-brand-green-secondary !important;
+    color: black;
+    //-webkit-print-color-adjust: exact;
   }
 
   #header-bottom {
-    background-color: $color-brand-green-primairy !important;
-    -webkit-print-color-adjust: exact;
+    //background-color: $color-brand-green-primairy !important;
+    //-webkit-print-color-adjust: exact;
   }
 
 
