@@ -13,7 +13,7 @@ import {User} from './user';
 export class UsersComponent implements OnInit {
 
   public userAppConfig: User;
-  public userConfigForm = null;
+  public userConfigForm = this.setupFormBuilderFormControls();
 
   constructor(public masterDataService: MasterDataService, public fb: FormBuilder) {
   }
@@ -21,19 +21,45 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
     this.masterDataService.getUser().subscribe((data: User) => {
       this.userAppConfig = data;
+      // this.userConfigForm = this.setupFormControls();
+      //this.userConfigForm = this.setupFormBuilderFormControls();
+      // workDay1s: this.fb.array([ this.createWeekDays() ]),
+
+      // this.userConfigForm.addControl('userName', new FormControl('shit', Validators.required));
     });
+  }
 
-    // {userName: ['Idsme', Validators.required],
-    this.userConfigForm = this.fb.group({
-        hoursWorked: [44, Validators.required],
-        rate: [100, Validators.required],
-        projectName: ['Project C', Validators.required],
-        clientName: ['SomeCLient C', Validators.required],
-        workDays: this.createWeekDays()
-      });
-    // workDay1s: this.fb.array([ this.createWeekDays() ]),
+  private setupFormBuilderFormControls() {
+     return this.fb.group({
+      hoursWorked: [44, Validators.required],
+      rate: [100, Validators.required],
+      projectName: ['Project C', Validators.required],
+      clientName: ['SomeCLient C', Validators.required],
+      userName: ['I. Achterhof', Validators.required],
+      workDays: this.createWeekDays()
+    });
+  }
 
-    this.userConfigForm.addControl("userName", new FormControl('I. Achterhof', Validators.required));
+  private setupUserControl() {
+    const result = new FormGroup({
+      userName: new FormControl('D. Achterhof'),
+    });
+    return result;
+  }
+
+  // TODO IDSME TRY TO FIX THIS
+  private setupFormControls() {
+    const result = new FormGroup({
+      userName: new FormControl('D. Achterhof'),
+      clientName: new FormControl('EPO'),
+      workDays: new FormGroup({
+        ma: 9,
+        di: 9,
+        wo: 8,
+        do: 9
+      })
+    });
+    return result;
   }
 
   createWeekDays(): FormGroup {
