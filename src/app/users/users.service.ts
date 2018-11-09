@@ -9,7 +9,7 @@ export class UsersService {
   public user =  <IUser>{
       settings : {
         name: 'I. Achterhof',
-        hoursWorked: 8,
+        hoursWorked: 9,
         workDays: [1, 1, 1, 1, 1, 0, 0],
         rate: 90,
         projectName: '999',
