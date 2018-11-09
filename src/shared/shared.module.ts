@@ -30,6 +30,7 @@ import {ButtonPrimairyComponent} from './ui/button-primairy/button-primairy.comp
 import {ExampleButtonsComponent} from './ui/example-buttons/example-buttons.component';
 import {IconButtonComponent} from './ui/icon-button/icon-button.component';
 import {IconButtonAlternativeComponent} from './ui/icon-button-alternative/icon-button-alternative.component';
+import {RatePipe} from './pipes/rate.pipe';
 
 /**
  * If a component could be re-used by another web-site it goes in Shared Moduless
@@ -59,7 +60,9 @@ export const COMPONENTS = [
   ExampleButtonsComponent,
 
   IconButtonComponent,
-  IconButtonAlternativeComponent
+  IconButtonAlternativeComponent,
+
+  RatePipe
 ];
 
 export const MODULES = [
