@@ -1,7 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AanhefComponent } from './aanhef.component';
-import { FormGroup } from '@angular/forms';
+import {AanhefComponent} from './aanhef.component';
 
 describe('AanhefComponent', () => {
   let component: AanhefComponent;
@@ -10,8 +9,7 @@ describe('AanhefComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        imports: [],
-        declarations: [AanhefComponent, FormGroup]
+        imports: [], declarations: [AanhefComponent]
       }).compileComponents();
     })
   );
