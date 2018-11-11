@@ -21,7 +21,7 @@ export class HoursMadeHelper {
   public static convertDefaultFreePeriod(workingDay: WorkedPeriod) {
     console.log(`convertDefaultFreePeriod`);
 
-    workingDay.hoursWorked = 0;
+      workingDay.hoursPerDay = 0;
     workingDay.projectName = 'FREE';
     workingDay.clientCode = 'None';
     workingDay.rateAtThatTime = 0;

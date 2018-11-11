@@ -13,9 +13,10 @@ export class Project implements IProject {
 }
 
 export class Settings implements ISettings {
-  hoursWorked: number;
-  name: string;
+    hoursPerDay: number;
   projectName: string;
   rate: number;
   workDays: number[];
+    startTimeDay: string;
+    userName: string;
 }

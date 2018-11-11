@@ -1,18 +1,19 @@
 {
   "settings": {
-    "name": "I. Achterhof",
-    "hoursWorked": 8,
+    "userName": "I. Achterhof",
+    "hoursPerDay": 10,
     "workDays": [
       1,
       1,
+      1,
+      1,
       0,
-      1,
-      1,
       0,
       0
     ],
     "rate": 90,
-    "projectName": "999"
+    "projectName": "Portbase",
+    "startTimeDay": "9:30"
   },
   "projects": [
     {
