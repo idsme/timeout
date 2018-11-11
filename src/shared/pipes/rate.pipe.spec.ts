@@ -1,24 +1,27 @@
-import { RatePipe } from './rate.pipe';
+import {RatePipe} from './rate.pipe';
 
+describe('RatePipe', () => {
 
-fdescribe('RatePipe', () => {
-  it('create an instance', () => {
     const pipe = new RatePipe();
 
-    expect(pipe).toBeTruthy();
-  });
+    it('create an instance', () => {
+        expect(pipe).toBeTruthy();
+    });
+
+    it('should return 90 euros earned after 1 hour', function () {
+        const result = pipe.transform(3600000, 90);
+
+        expect(result).toEqual('90');
+    });
+
+    it('should return 0 when mandatory rate argument is not given', function () {
+        const result = pipe.transform(3234);
+
+        expect(result).toEqual('0');
+    });
 
 
-  fit('should return 90 euros earned after 1 hour', function () {
-    const result = this.pipe.transform('3600000', 90);
-
-    expect(result).toEqual(90.00);
-  });
-
-
-  it('should return 0 when mandatory rate argument is not given', function () {
-    const result = this.pipe.transform('3234');
-
-    expect(result).toEqual(90.00);
-  });
+    it('should blah be 5', function () {
+        expect(pipe.blah).toEqual(5);
+    });
 });
