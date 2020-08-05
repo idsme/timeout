@@ -21,7 +21,4 @@ describe('RatePipe', () => {
     });
 
 
-    it('should blah be 5', function () {
-        expect(pipe.blah).toEqual(5);
-    });
 });
