@@ -9,11 +9,13 @@ import { ActionMenuComponent } from './working-period-page-layout/action-menu/ac
 import {SharedModule} from '../../shared/shared.module';
 import { WorkPeriodHoursTotalComponent } from './working-period-page-layout/work-period-hours-total/work-period-hours-total.component';
 import { TodayComponent } from './today/today.component';
+import {SharedUtilsModule} from '../../shared/shared-utils.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    SharedUtilsModule,
   ],
   declarations: [WorkingPeriodPageLayoutComponent, WorkedPeriodItemComponent, WorkedPeriodHeaderComponent, WorkedPeriodFooterComponent, WorkedPeriodTotalsComponent, ActionMenuComponent, WorkPeriodHoursTotalComponent, WorkPeriodHoursTotalComponent, TodayComponent]
 })
