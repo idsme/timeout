@@ -16,7 +16,7 @@ export class UsersService {
       },
       projects : [
         {
-          name: 'EPO',
+          name: 'TNO',
           clientCode: '998',
           rate: 90,
         },
