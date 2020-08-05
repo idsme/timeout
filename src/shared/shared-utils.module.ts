@@ -2,12 +2,11 @@
 
 import {NgModule} from '@angular/core';
 
-import {EntriesPipe} from './pipes/entry-pipe';
-import {KeysPipe} from './pipes/keys-pipe';
+import {RatePipe} from './pipes/rate.pipe';
+import {KeysPipe} from './pipes/keys.pipe';
 
-export const COMPONENTS = [
-  KeysPipe,
-  EntriesPipe
+
+export const COMPONENTS = [RatePipe, KeysPipe
 ];
 
 export const MODULES = [];

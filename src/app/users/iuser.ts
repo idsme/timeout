@@ -1,9 +1,10 @@
   export interface ISettings {
-    name: string;
-    hoursWorked: number;
+      userName: string;
+      hoursPerDay: number;
     workDays: number[];
     rate: number;
     projectName: string;
+      startTimeDay: string;
   }
 
   export interface IProject {

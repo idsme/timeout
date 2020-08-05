@@ -1,15 +1,15 @@
-import { TestBed, inject } from '@angular/core/testing';
+import {inject, TestBed} from '@angular/core/testing';
 
-import { UsersService } from './users.service';
+import {LocalStorageService} from './local-storage.service';
 
-describe('UsersService', () => {
+describe('LocalStorageService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [UsersService]
+        providers: [LocalStorageService]
     });
   });
 
-  it('should be created', inject([UsersService], (service: UsersService) => {
+    it('should be created', inject([LocalStorageService], (service: LocalStorageService) => {
     expect(service).toBeTruthy();
   }));
 });

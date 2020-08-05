@@ -4,10 +4,12 @@ import {WorkingPeriodPageLayoutComponent} from './hoursmade/working-period-page-
 import {UsersComponent} from './users/users.component';
 import {UsersModule} from './users/users.module';
 import {SharedRoutingModule} from '../shared/shared-routing.module';
+import {TodayComponent} from './hoursmade/today/today.component';
 
 const routes: Routes = [
   {path: '', component: WorkingPeriodPageLayoutComponent},
   {path: 'hours', component: WorkingPeriodPageLayoutComponent},
+  {path: 'hours/today', component: TodayComponent},
   {path: 'users', component: UsersComponent},
   {path: 'about', loadChildren: '../shared/shared.module#SharedModule'},
 ];

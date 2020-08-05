@@ -13,7 +13,8 @@ import {HeaderComponent} from './layout/header.component';
 
 import {AngularFlexLayoutComponent} from '../app/form-input-reactive/angularflexlayout/angularflexlayout.component';
 import {FeedbackComponent} from './duplo/feedback/feedback.component';
-// Feedback component contains great example code removed angular-star-rating from the package.json import {StarRatingModule} from 'angular-star-rating';
+// Feedback component contains great example code removed angular-star-rating from the package.json import
+// {StarRatingModule} from 'angular-star-rating';
 import {ConfigComponent} from './duplo/config/config.component';
 import {HeaderImageComponent} from './layout/header-image/header-image.component';
 import {FileNotFoundComponent} from './duplo/file-not-found/file-not-found.component';
@@ -36,50 +37,32 @@ import {IconButtonAlternativeComponent} from './ui/icon-button-alternative/icon-
  * If 3 Components are in Shared of the Same Type and you have a Fourth..
  * Add it to Shared and Inform the Lead dev. He is responsible for the creation of new modules.
  *
- * @type {(HeaderComponent | HeaderImageComponent | ContentComponent | FooterComponent | ApplicationVersionComponent | RouterLinkTesterComponent | AngularFlexLayoutComponent | FeedbackComponent | ConfigComponent | ReleasenotesComponent | FileNotFoundComponent | StyleguideComponent)[]}
+ * @type {(HeaderComponent | HeaderImageComponent | ContentComponent | FooterComponent | ApplicationVersionComponent |
+ *     RouterLinkTesterComponent | AngularFlexLayoutComponent | FeedbackComponent | ConfigComponent | ReleasenotesComponent
+ *     | FileNotFoundComponent | StyleguideComponent)[]}
  */
 
-export const COMPONENTS = [
-  HeaderComponent,
-  HeaderImageComponent,
+export const COMPONENTS = [HeaderComponent, HeaderImageComponent,
 
-  ContentComponent,
-  FooterComponent,
-  ApplicationVersionComponent,
+    ContentComponent, FooterComponent, ApplicationVersionComponent,
 
-  RouterLinkTesterComponent,
-  AngularFlexLayoutComponent,
-  FeedbackComponent,
-  ConfigComponent,
-  ReleasenotesComponent,
-  FileNotFoundComponent,
+    RouterLinkTesterComponent, AngularFlexLayoutComponent, FeedbackComponent, ConfigComponent, ReleasenotesComponent, FileNotFoundComponent,
 
-  StyleguideComponent,
-  ButtonPrimairyComponent,
-  ExampleButtonsComponent,
+    StyleguideComponent, ButtonPrimairyComponent, ExampleButtonsComponent,
 
-  IconButtonComponent,
-  IconButtonAlternativeComponent
-];
+    IconButtonComponent, IconButtonAlternativeComponent];
 
-export const MODULES = [
-  CommonModule,
-  HttpClientModule,
-//  If we add this Error pop's up in the console. ReactiveFormsModule
-  FormsModule,
-  ReactiveFormsModule,
-  RouterModule,
-];
+export const MODULES = [CommonModule, HttpClientModule, //  If we add this Error pop's up in the console. ReactiveFormsModule
+    FormsModule, ReactiveFormsModule, RouterModule,];
 
 export const COMPONENT_PLUS_MODULES = [...COMPONENTS, MODULES];
 
 
 @NgModule({
-  imports: [MODULES, SharedRoutingModule, FormInputReactiveModule
-  ],
-  declarations: COMPONENTS,
-  providers: [ConfigService, MasterDataService, FeedBackService],
-  exports: COMPONENT_PLUS_MODULES,
+    imports: [MODULES, SharedRoutingModule, FormInputReactiveModule],
+    declarations: COMPONENTS,
+    providers: [ConfigService, MasterDataService, FeedBackService],
+    exports: COMPONENT_PLUS_MODULES,
 })
 export class SharedModule {
 }

@@ -10,7 +10,7 @@
   * /feature/i-user.ts
   * /feature/components/user.section.component.ts 
   * /test/feature/*test.helper.ts
-  * /feature/users.service.ts
+  * /feature/localstorage.service.ts
 * Change Detection Strategy
 * In our face project version, implemented user stories
 
