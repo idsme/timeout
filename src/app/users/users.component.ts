@@ -87,13 +87,13 @@ export class UsersComponent implements OnInit {
 
     console.log("workDays", this.userConfigForm.controls.workDays);
 
-    this.userAppConfig.settings.workDays[0] = this.userConfigForm.controls.workDays.controls.ma.value;
-    this.userAppConfig.settings.workDays[1] = this.userConfigForm.controls.workDays.controls.di.value;
-    this.userAppConfig.settings.workDays[2] = this.userConfigForm.controls.workDays.controls.wo.value;
-    this.userAppConfig.settings.workDays[3] = this.userConfigForm.controls.workDays.controls.do.value;
-    this.userAppConfig.settings.workDays[4] = this.userConfigForm.controls.workDays.controls.vr.value;
-    this.userAppConfig.settings.workDays[5] = this.userConfigForm.controls.workDays.controls.za.value;
-    this.userAppConfig.settings.workDays[6] = this.userConfigForm.controls.workDays.controls.zo.value;
+    // this.userAppConfig.settings.workDays[0] = this.userConfigForm.controls.workDays.controls.ma.value;
+    // this.userAppConfig.settings.workDays[1] = this.userConfigForm.controls.workDays.controls.di.value;
+    // this.userAppConfig.settings.workDays[2] = this.userConfigForm.controls.workDays.controls.wo.value;
+    // this.userAppConfig.settings.workDays[3] = this.userConfigForm.controls.workDays.controls.do.value;
+    // this.userAppConfig.settings.workDays[4] = this.userConfigForm.controls.workDays.controls.vr.value;
+    // this.userAppConfig.settings.workDays[5] = this.userConfigForm.controls.workDays.controls.za.value;
+    // this.userAppConfig.settings.workDays[6] = this.userConfigForm.controls.workDays.controls.zo.value;
 
 
     // TODO IDSME store submitted settings in Config
