@@ -9,7 +9,7 @@ import * as moment from 'moment';
 export class WorkedPeriodFooterComponent implements OnInit {
 
   @Input()
-  signCityConsultant = "Rotterdam";
+  signCityConsultant = "Utrecht";
   @Input()
   signingDateConsultant = moment().format('ddd DD/MM/YYYY');
   @Input()
