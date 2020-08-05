@@ -1,24 +1,3 @@
-@media print {
-
-
-  #section-worked-period-header {
-    //-webkit-print-color-adjust: exact;
-  }
-
-  #header-top {
-    //background-color: $color-brand-green-secondary !important;
-    color: black;
-    //-webkit-print-color-adjust: exact;
-  }
-
-  #header-bottom {
-    //background-color: $color-brand-green-primairy !important;
-    //-webkit-print-color-adjust: exact;
-  }
-
-
-}
-
 #section-worked-period-header {
   border: 1px solid $color-brand-green-primairy;
   .textWhite {
@@ -34,5 +13,28 @@
   }
 
 }
+
+
+@media print {
+
+
+  #section-worked-period-header .textWhite {
+    color: black;
+  }
+
+  #header-top {
+    //background-color: $color-brand-green-secondary !important;
+//    color: black;
+    //-webkit-print-color-adjust: exact;
+  }
+
+  #header-bottom {
+    //background-color: $color-brand-green-primairy !important;
+    //-webkit-print-color-adjust: exact;
+  }
+
+
+}
+
 
 
