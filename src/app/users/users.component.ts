@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MasterDataService} from '../../shared/duplo/masterdata/masterdata.service';
 import {User} from './user';
-
+import {LocalStorageService} from './local-storage.service';
 
 
 @Component({
@@ -15,29 +15,62 @@ export class UsersComponent implements OnInit {
   public userAppConfig: User;
   public userConfigForm = this.setupFormBuilderFormControls();
 
-  constructor(public masterDataService: MasterDataService, public fb: FormBuilder) {
+    constructor(public masterDataService: MasterDataService, public localStorageService: LocalStorageService, public fb: FormBuilder) {
   }
 
   ngOnInit() {
     this.masterDataService.getUser().subscribe((data: User) => {
       this.userAppConfig = data;
-      // this.userConfigForm = this.setupFormControls();
-      //this.userConfigForm = this.setupFormBuilderFormControls();
-      // workDay1s: this.fb.array([ this.createWeekDays() ]),
+        console.log('retrieved user data from user.json:>', data);
+        this.localStorageService.addUserConfigToLocalStorage(data);
 
-      // this.userConfigForm.addControl('userName', new FormControl('shit', Validators.required));
+        // Override default form settings if data contains anything
+        console.log('userConfig Form:>', this.userConfigForm.value);
+        this.userConfigForm.value.userName = this.userAppConfig.settings.userName;
+        this.userConfigForm.value.hoursPerDay = this.userAppConfig.settings.hoursPerDay;
+        this.userConfigForm.value.rate = this.userAppConfig.settings.rate;
+        this.userConfigForm.value.projectName = this.userAppConfig.settings.projectName;
+        console.log('userConfig FormUpdated:>', this.userConfigForm.value);
+
+
+        console.log('workDays', this.userConfigForm.controls.workDays);
+
+        // this.userAppConfig.settings.workDays[0] = this.userConfigForm.controls.workDays.controls.ma.value;
+        // this.userAppConfig.settings.workDays[1] = this.userConfigForm.controls.workDays.controls.di.value;
+        // this.userAppConfig.settings.workDays[2] = this.userConfigForm.controls.workDays.controls.wo.value;
+        // this.userAppConfig.settings.workDays[3] = this.userConfigForm.controls.workDays.controls.do.value;
+        // this.userAppConfig.settings.workDays[4] = this.userConfigForm.controls.workDays.controls.vr.value;
+        // this.userAppConfig.settings.workDays[5] = this.userConfigForm.controls.workDays.controls.za.value;
+        // this.userAppConfig.settings.workDays[6] = this.userConfigForm.controls.workDays.controls.zo.value;
+
+
+
+
+
     });
   }
 
-  private setupFormBuilderFormControls() {
-     return this.fb.group({
-      hoursWorked: [44, Validators.required],
-      rate: [100, Validators.required],
-      projectName: ['Project C', Validators.required],
-      clientName: ['SomeCLient C', Validators.required],
-      userName: ['I. Achterhof', Validators.required],
-      workDays: this.createWeekDays()
-    });
+    public submit(): void {
+        // Update the userAppConfig
+        console.log('userConfig Form:>', this.userConfigForm.value);
+        this.userAppConfig.settings.userName = this.userConfigForm.value.userName;
+        this.userAppConfig.settings.hoursPerDay = this.userConfigForm.value.hoursPerDay;
+        this.userAppConfig.settings.rate = this.userConfigForm.value.rate;
+        this.userAppConfig.settings.projectName = this.userConfigForm.value.projectName;
+
+        console.log('workDays', this.userConfigForm.controls.workDays);
+
+        // this.userAppConfig.settings.workDays[0] = this.userConfigForm.controls.workDays.controls.ma.value;
+        // this.userAppConfig.settings.workDays[1] = this.userConfigForm.controls.workDays.controls.di.value;
+        // this.userAppConfig.settings.workDays[2] = this.userConfigForm.controls.workDays.controls.wo.value;
+        // this.userAppConfig.settings.workDays[3] = this.userConfigForm.controls.workDays.controls.do.value;
+        // this.userAppConfig.settings.workDays[4] = this.userConfigForm.controls.workDays.controls.vr.value;
+        // this.userAppConfig.settings.workDays[5] = this.userConfigForm.controls.workDays.controls.za.value;
+        // this.userAppConfig.settings.workDays[6] = this.userConfigForm.controls.workDays.controls.zo.value;
+
+
+        // TODO IDSME store submitted settings in Config
+        console.log('Submmitted:>', this.userConfigForm.value);
   }
 
   private setupUserControl() {
@@ -77,27 +110,16 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  public submit(): void {
-    // Update the userAppConfig
-    console.log("userConfig Form:>", this.userConfigForm.value);
-    this.userAppConfig.settings.name = this.userConfigForm.value.username;
-    this.userAppConfig.settings.hoursWorked = this.userConfigForm.value.hoursWorked;
-    this.userAppConfig.settings.rate = this.userConfigForm.value.rate;
-    this.userAppConfig.settings.projectName = this.userConfigForm.value.projectName;
-
-    console.log("workDays", this.userConfigForm.controls.workDays);
-
-    // this.userAppConfig.settings.workDays[0] = this.userConfigForm.controls.workDays.controls.ma.value;
-    // this.userAppConfig.settings.workDays[1] = this.userConfigForm.controls.workDays.controls.di.value;
-    // this.userAppConfig.settings.workDays[2] = this.userConfigForm.controls.workDays.controls.wo.value;
-    // this.userAppConfig.settings.workDays[3] = this.userConfigForm.controls.workDays.controls.do.value;
-    // this.userAppConfig.settings.workDays[4] = this.userConfigForm.controls.workDays.controls.vr.value;
-    // this.userAppConfig.settings.workDays[5] = this.userConfigForm.controls.workDays.controls.za.value;
-    // this.userAppConfig.settings.workDays[6] = this.userConfigForm.controls.workDays.controls.zo.value;
-
-
-    // TODO IDSME store submitted settings in Config
-    console.log('Submmitted:>', this.userConfigForm.value);
+    private setupFormBuilderFormControls() {
+        return this.fb.group({
+            hoursPerDay: [44, Validators.required],
+            rate: [100, Validators.required],
+            projectName: ['Project Z', Validators.required],
+            clientName: ['SomeCLient Z', Validators.required],
+            userName: ['IDS. Achterhof', Validators.required],
+            startTimeDay: ['9:45', Validators.required],
+            workDays: this.createWeekDays()
+        });
   }
 }
 

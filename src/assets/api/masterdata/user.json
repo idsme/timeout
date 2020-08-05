@@ -1,7 +1,7 @@
 {
   "settings": {
     "userName": "I. Achterhof",
-    "hoursPerDay": 10,
+    "hoursPerDay": 9,
     "workDays": [
       1,
       1,
@@ -12,13 +12,13 @@
       0
     ],
     "rate": 90,
-    "projectName": "Portbase",
-    "startTimeDay": "9:30"
+    "projectName": "TNO",
+    "startTimeDay": "8:00"
   },
   "projects": [
     {
       "name": "project x",
-      "clientCode": "999",
+      "clientCode": "998",
       "rate": 90
     },
     {
