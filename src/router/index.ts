@@ -1,10 +1,16 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
+import SimpleForm from "../components/SimpleForm.vue";
 
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
+  {
+    path: "/simple",
+    name: "SimpleForm",
+    component: SimpleForm
+  },
   {
     path: "/",
     name: "Home",
